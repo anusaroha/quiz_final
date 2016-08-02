@@ -1,0 +1,23 @@
+<p>
+  <h1><strong><%= @auction.title %></strong></h1>
+  <div id="block2">
+      Reserve Price : <%= @auction.reserve_price %>
+  </div>
+</p>
+<div >
+    <%= @auction.details %>
+</div>
+<%= simple_form_for [@auction, @bid] do |f| %>
+  <div class="container">
+    <p>
+      <%= f.input :amount %> <%= f.submit %>
+    </p>
+
+
+
+  </div>
+<% end %>
+<h3>Previous Bids</h3>
+<% @auction.new_first_bids.each do |comms| %>
+  $<%= comms.amount %> at <%= comms.created_at.strftime("%B %d %Y") %> <br />
+<% end %>

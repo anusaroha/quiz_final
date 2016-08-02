@@ -1,0 +1,18 @@
+<%= simple_form_for @auction do |f| %>
+  <div class="container">
+    <p>
+      <%= f.input :title %>
+
+    </p>
+    <p>
+      <%= f.input :details, {rows: "10", cols: "50"}%>
+    </p>
+      <p>Date: <input type="text" id="datepicker"></p>
+    <div>
+      <%= f.input :reserve_price, placeholder: "$500" %>
+    </div>
+    <p>
+      <%= f.submit %>
+    </p>
+  </div>
+  <% end %>
